@@ -1,0 +1,45 @@
+docker run -d --name postgres13 -e POSTGRES_PASSWORD=postgres -p 30004:5432 postgres:13.3
+drop table covid19;
+
+create table covid19 
+(No numeric default 0,
+Country varchar(100),
+TCases numeric default 0,
+NCases numeric default 0,
+TDeaths numeric default 0,
+NDeaths numeric default 0,
+TRecovered numeric default 0,
+NewRecovered numeric default 0,
+ACases numeric default 0,
+Critical numeric default 0,
+TC1Mpop numeric default 0,
+D1Mpop numeric default 0,
+TTests numeric default 0,
+T1Mpop numeric default 0,
+Population numeric default 0,
+Continent varchar(100),
+CaseeveryXppl numeric default 0,
+DeatheveryXppl numeric default 0,
+TesteveryX numeric default 0 ,
+NewCases1Mpop decimal default 0,
+NewDeaths1Mpop decimal default 0,
+ActiveCases1Mpop decimal default 0);
+
+#,Country,TCases,NCases,TDeaths,NDeaths,TRecovered,NewRecovered,ACases,Critical,TC1Mpop,D1Mpop,TTests,T1Mpop,Population,Continent,1 Caseevery X ppl,1 Deathevery X ppl,1 Testevery X ppl,New Cases/1M pop,New Deaths/1M pop,Active Cases/1M pop
+
+
+docker run -d -p 20300:3000 --name metabase metabase/metabase
+
+http://labo.takamoto.biz/metabase
+
+■棒グラフ
+https://labo.takamoto.biz/metabase/public/question/39a970c4-b1bc-4f87-b60e-ee45a35639e2
+
+■円グラフ
+https://labo.takamoto.biz/metabase/public/question/6f01c9f7-c45a-4e59-b9c2-a57131b50638
+
+■線グラフ
+http://labo.takamoto.biz/metabase/public/question/82181102-f3dc-4550-a1b7-43860d2130e3
+
+■表
+https://labo.takamoto.biz/metabase/public/question/26ee1806-f30f-4caf-9b7e-44db1645cdaa
